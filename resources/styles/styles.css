@@ -9,7 +9,7 @@
 
     /* Text colors */
     --text-primary-color: #000000;
-    --text-secondary-color: #ffffff;
+    --text-secondary-color: #d8d8a8;
     --text-tertiary-color: #609000;
     --text-quaternary-color: #f00000;
 }
@@ -34,6 +34,7 @@ header {
     display: inline-flex;
     width: 100%;
     align-items: center;
+    /* padding-top: 30px; */
 }
 
 #company-name {
@@ -54,6 +55,11 @@ nav {
     /* border: 1px solid red; */
     background-color: var(--bg-secondary-color);
     padding-left: 2rem;
+    display: flex;
+}
+
+nav img {
+    display: none;
 }
 
 nav ul {
@@ -79,12 +85,56 @@ nav ul li a:hover {
     color: var(--text-quaternary-color);
 }
 
+@media only screen and (max-width: 640px) {
+    header {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    nav img {
+        display: inline-block;
+        max-height: 100px;
+    }
+
+    nav img.menu {
+        max-height: 50px;
+        margin-bottom: 10px;
+        margin-right: 30px;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
+
 /* Page Content */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: .5rem 2rem;
+    gap: 1.5rem 0;
+}
+
+main section {
+    width: 100%;
+    display: flex;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin: 10px 0px;
+    color: var(--text-tertiary-color);
+}
+
+main p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -96,14 +146,151 @@ main {
 
 @media only screen and (min-width: 640px) and (max-width: 1000px) {
     main {
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
+        width: auto;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
     }
 }
 
-main section {
-    width: 100%;
-    border: 1px solid red;
+/* Intro Section */
+.intro {
+    gap: 2rem;
+    align-content: center;
 }
 
+.intro p {
+    flex-grow: 3;
+}
+
+.intro img {
+    display: inline-flex;
+    flex: 1 1 300px;
+    max-width: 300px;
+    max-height: 350px;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 10px 30px 10px;
+    background-color: var(--bg-secondary-color);
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .intro {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .intro .content {
+        font-size: .75em;
+    }
+
+    .intro img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+/* Highlights Section */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--bg-quaternary-color);
+    color: var(--text-secondary-color);
+    border-radius: .25rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+    text-align: center;
+    margin: 3rem 1rem;
+}
+
+.highlights h1 {
+    font-size: 3rem;;
+}
+
+/* Reviews */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    color: var(--text-tertiary-color);
+}
+
+.reviews .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: center;
+}
+
+.review{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-secondary-color);
+    max-width: 300px;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.review .quote {
+    color: var(--text-primary-color);
+    padding: 30px;
+}
+
+.review .author {
+    background-color: var(--bg-quaternary-color);
+    color: var(--text-secondary-color);
+    justify-self: end;
+    padding-top: 10px;
+}
+
+.review .author img {
+    display: inline-block;
+    width: 75px;
+    height: auto;
+}
+
+.review .author .name {
+    font-weight: bold;
+}
+
+.review .author .expertise {
+    font-size: .75em;
+    line-height: .5em;
+    font-style: italic;
+}
+
+.review .author .submitted {
+    font-size: 1em;
+    line-height: .5em;
+}
+
+@media screen and (max-width: 1000px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+    
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-secondary-color);
+    color: var(--text-tertiary-color);
+    margin-top: 2rem;
+}
+
+footer p {
+    text-align: center;
+    padding: 5rem 2rem;
+}
